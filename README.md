@@ -21,10 +21,12 @@ A 2D side-scrolling spaceship shooter focused on a new reverse shooting core mec
 - Reuses player's bullets game object/enemies object/ to reduce instantiation and improve performance  
 - Example code: `code-snippets/ObjectPool.cs`
 
-- Putting the game object you want to pool so we can store them in enemyPools, and keep them inactive with SetActive(false). 
+- Putting the game object you want to pool so we can store them in enemyPools, and keep them inactive with SetActive(false).
+
 ![Demo1](media/ObjectPool1.gif)
 
 - When you need to spawn an enemy, you grab an inactive one, set its position/state, call SetActive(true), and when it’s “done” (killed/off-screen) you disable it again so it can be reused—avoiding repeated Instantiate/Destroy performance spikes.
+
 ![Demo2](media/ObjectPool2.gif)
 
 
