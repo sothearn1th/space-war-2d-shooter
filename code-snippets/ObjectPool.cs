@@ -2,6 +2,20 @@
 /*OTHER IMPLEMENTED CODES*/
 
 
+    [Header("Enemy Prefabs (Ordered by Index)")]
+    [SerializeField] private List<GameObject> enemyPrefabs;
+    [SerializeField] private int amountPerType = 5;
+
+    // Each enemy type has its own pooled list index for easy access
+    // 
+    public static Dictionary<int, List<GameObject>> enemyPools = new Dictionary<int, List<GameObject>>();
+
+/*OTHER IMPLEMENTED CODES*/
+//...
+/*OTHER IMPLEMENTED CODES*/
+
+
+
     /// <summary>
     /// Pre-instantiates a fixed number of enemies for each prefab type and stores them in pools.
     /// This avoids Instantiate() spikes during gameplay by reusing disabled objects.
